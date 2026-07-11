@@ -32,7 +32,7 @@ export const askQuestion = async (
   } catch (error) {
     res.status(500).json({
       answer: '',
-      error: 'Failed to get answer for question',
+      error: 'Something went wrong, please try again later.',
     });
   }
 };
