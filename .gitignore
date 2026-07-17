@@ -25,3 +25,13 @@ dist-ssr
 
 .env
 .claude
+
+# RAGAS ground-truth prep dumps (throwaway)
+server/articles_dump
+server/slack_dump
+server/slack_dump_combined.txt
+server/pdf_text_dump
+
+# RAGAS eval run logs — committed deliverable evidence, not throwaway logs
+!server/ragas/logs/
+!server/ragas/logs/**

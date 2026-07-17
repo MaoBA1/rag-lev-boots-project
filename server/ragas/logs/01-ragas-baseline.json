@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-07-17T20:53:52.214Z",
+  "groundTruthEval": [
+    {
+      "question": "What was the primary battery voltage/duration limit for the initial LV-1 prototype, and how is this limitation mitigated in the industrial LV-C model?",
+      "groundTruthAnswer": "The initial LV-1 \"Daedalus\" prototype was limited to a maximum of 4.5 minutes of sustained, stable hover due to unoptimized field shaping and early low-density battery technology. In contrast, the industrial LV-C model mitigates this limit by using high-density solid-state batteries, allowing it to sustain continuous levitation for an 8-hour shift.",
+      "generatedAnswer": "The primary battery voltage/duration limit for the initial LV-1 prototype was capped at 4.5 minutes before the primary battery voltage dropped below a safe threshold.\n\nIn contrast, the industrial LV-C model has achieved an 8-hour continuous levitation time, which is significantly longer than the original 4.5-minute limit of the LV-1 prototype.",
+      "evaluationScore": 7,
+      "justificationForScore": "The answer correctly identifies the 4.5-minute limit for the LV-1 and the 8-hour duration for the LV-C, but it omits mentioning solid-state batteries as a key mitigating factor."
+    },
+    {
+      "question": "What is the \"Aetheric Cap,\" and what specific historical event prompted its implementation on civilian models?",
+      "groundTruthAnswer": "The \"Aetheric Cap\" is a non-bypassable, firmware-based limit that hard-caps the altitude of civilian Levitation Boots to 30 meters. It was implemented in response to a near-fatal military incident where an operator in an uncapped LV-2 \"Nomad\" model manually overrode altitude warnings, ascended past 100 meters, and blacked out from hypoxia.",
+      "generatedAnswer": "The \"Aetheric Cap\" is a non-negotiable, firmware-based safety feature implemented on all civilian models of Levitation Boots (LV-4). It is a hard cap at 30 meters, which serves as a guarantee that personal flight will remain a joyful and safe endeavor in dense urban environments. This limit was established after a critical event involving the use of Levitation Boots by military personnel, where an over-ascent incident occurred due to power failure, resulting in severe hypoxia. The implementation of the 30-meter Aetheric Cap on civilian models was prompted by this incident and is intended to mitigate risk in dense airspace and prevent ascent into environments requiring supplemental oxygen.",
+      "evaluationScore": 8,
+      "justificationForScore": "The answer correctly identifies the 'Aetheric Cap' as a non-negotiable firmware-based safety feature with a 30-meter limit for civilian models and mentions the historical event that prompted its implementation. However, it incorrectly states that the incident involved a power failure, which is not supported by the ground truth."
+    },
+    {
+      "question": "Under what precise conditions does the Triple-Redundant Auto-Land System (TRAS) override manual control to initiate a controlled descent, and what is its standard rate of descent?",
+      "groundTruthAnswer": "The TRAS instantly overrides all user controls, disables the MTVS, and initiates a controlled descent at a fixed, minimum-impact rate of 0.5 m/s under two precise conditions: if the continuous angular tilt exceeds 35 degrees, or if any two of the three primary sensors fail (the three sensors monitor wearer heart rate/blood oxygen, angular tilt, and main AFG power failure).",
+      "generatedAnswer": "The TRAS overrides manual control to initiate a controlled descent under two conditions:\n\n1. Exceeding 35° tilt: Indicates loss of user control/balance.\n2. User Input Cessation: Detected via proprietary biometric sensors (loss of consciousness/blackout).\n\nIn both cases, the system initiates a controlled descent at a standard rate of 0.5 m/s, ensuring a gentle landing even from the maximum permitted height of 30 meters.",
+      "evaluationScore": 7,
+      "justificationForScore": "The answer correctly identifies two conditions for TRAS activation and mentions the standard rate of descent, but it incorrectly states that user input cessation is one of these conditions."
+    },
+    {
+      "question": "What physical and physiological issues did early, untrained industrial workers face during the initial rollout of the LV-C boots?",
+      "groundTruthAnswer": "Untrained warehouse staff suffered from severe vestibular fatigue, which manifested as dizziness and nausea, as well as a 40% higher rate of musculoskeletal non-impact sprains and strains (especially in the ankle, knee, and core) compared to ground-based roles.",
+      "generatedAnswer": "Early, untrained industrial workers faced significant physical and physiological issues during the initial rollout of the LV-C boots, including:\n\n1. Vestibular Fatigue: The inner ear's vestibular system was constantly working to compensate for the sensation of weightlessness combined with micro-corrections from the boots' Inertial Dampening System (IDS), leading to severe dizziness and nausea.\n2. Musculoskeletal Strain: Workers experienced a 40% higher rate of ankle sprains, knee strains, and core muscle injuries due to the intensive, continuous low-level muscular effort required to maintain upright stability while wearing the boots.\n\nThese issues resulted in fatigue-related balance failures, making it difficult for workers to operate safely above 5 meters.",
+      "evaluationScore": 7,
+      "justificationForScore": "The generated answer correctly identifies vestibular fatigue and musculoskeletal strain but inaccurately mentions the Inertial Dampening System (IDS) for vestibular fatigue, which is not supported by the ground truth."
+    },
+    {
+      "question": "How did engineers resolve the extreme \"Aetheric Hum\" during early high-energy Project Daedalus trials?",
+      "groundTruthAnswer": "The \"Aetheric Hum\" was initially caused by brute-force energy delivery using massive high-frequency RF emitters. It was resolved by an accidental discovery showing that a specific, precisely modulated, low-amplitude current cycle in the Stabilized Coil Array (SCA) could sustain the LGR effect through resonance and perturbation of the quantum vacuum, moving the system from high power to precise frequency control.",
+      "generatedAnswer": "The 'Aetheric Hum' was reduced by 60% with the addition of ceramic dampeners, and an additional 10% reduction was achieved by tightening the SCA coupling rigidity.",
+      "evaluationScore": 2,
+      "justificationForScore": "The generated answer significantly contradicts the ground truth by mentioning ceramic dampeners and SCA coupling rigidity, which are not mentioned in the supporting quotes."
+    },
+    {
+      "question": "What is the specific target profile correlation coefficient required by the Quantum Resonance Spectrometer (QRS) to ensure LGR field stability?",
+      "groundTruthAnswer": "The Quantum Resonance Spectrometer (QRS) must maintain a correlation coefficient of rho >= 0.985 with the target LGR template to guarantee field stability.",
+      "generatedAnswer": "The QRS requires a correlation coefficient of ρ≥0.985 with the target profile to ensure LGR field stability.",
+      "evaluationScore": 10,
+      "justificationForScore": "The generated answer accurately matches the ground truth in both the value and context provided."
+    },
+    {
+      "question": "Why did the newly formed Vertical Mobility Safety Board (VMSB) investigate the civilian LV-4 models, and what physical defect was discovered?",
+      "groundTruthAnswer": "The VMSB investigated the LV-4 due to a massive, voluntary recall shaking public faith. They discovered a manufacturing defect where a key sub-supplier had compromised the thermal coatings on the Mini-Thruster Vectoring System (MTVS) booster coil assemblies. This led to localized thermal runaway and unexpected booster shutdowns.",
+      "generatedAnswer": "The VMSB investigated the civilian LV-4 models due to a massive voluntary recall that had already shaken public faith in the reliability of the LV-4's propulsion systems. The investigation revealed a critical manufacturing flaw in the Mini-Thruster Vectoring System (MTVS) boosters, specifically a cost-cutting measure in a key sub-supplier that compromised the thermal coatings meant to manage the intense heat generated by the high-velocity rotors. This led to intermittent, localized thermal runaway, causing the internal cooling systems to fail and the boosters to overheat and shut down without warning.",
+      "evaluationScore": 9,
+      "justificationForScore": "The generated answer is mostly accurate but slightly omits mentioning that this led to unexpected booster shutdowns, which is a significant detail from the ground truth."
+    },
+    {
+      "question": "What acoustic mitigation did engineers achieve for the civilian LV-4 models, and how did it compare to the original MTVS booster sound levels?",
+      "groundTruthAnswer": "The original MTVS boosters peaked near a deafening 95 dB, resulting in pervasive noise complaints. Civilian LV-4 models were subsequently redesigned with advanced acoustic dampeners (specifically, a tuned Helmholtz resonator surrounding each impeller duct) and optimized impeller geometry, resulting in a measured 45% reduction in decibel output down to approximately 52 dB at 1 meter. This represents a total absolute decrease of about 43 dB, distinct from an unrelated preliminary prototype test mentioned in internal Slack channels where a bulky housing achieved only an initial 8 dBA reduction.",
+      "generatedAnswer": "Engineers achieved a 45% reduction in decibel output (from approximately 95 dB to 52 dB) by implementing advanced acoustic dampeners—specifically, a tuned Helmholtz resonator surrounding each impeller duct—and impeller geometry optimization for the civilian LV-4 models. This resulted in a significant improvement in public acceptance and compliance with urban noise ordinances.",
+      "evaluationScore": 9,
+      "justificationForScore": "The generated answer accurately captures the key facts about the acoustic mitigation measures and the resulting decibel reduction, though it slightly omits the exact initial and final dB levels."
+    },
+    {
+      "question": "What is \"Geofenced Low-Altitude Navigation\" (GLAN), and how does it prevent \"Grounder\" incidents?",
+      "groundTruthAnswer": "GLAN is a firmware safety layer that uses low-power proximity sensors and public geospatial data to automatically limit the MTVS speed to 5 km/h whenever a user enters a designated \"Grounder\" (pedestrian-only) zone.",
+      "generatedAnswer": "Geofenced Low-Altitude Navigation (GLAN) is a firmware layer introduced to mitigate the risk of \"Grounder\" incidents. It utilizes low-power proximity sensors and public geospatial data to automatically cap the MTVS speed to a gentle 5 km/h when the boots enter a designated 'Grounder' (pedestrian-only) zone. This system effectively neutralizes the risk of high-speed collision near pavement level, preventing users from drifting into low-rise windows, street furniture, or pedestrians on the sidewalk due to loss of balance control.",
+      "evaluationScore": 9,
+      "justificationForScore": "The generated answer accurately describes GLAN and its function, matching the key details from the ground truth."
+    },
+    {
+      "question": "What efficiency gains in retrieval time were demonstrated when utilizing LevBoots in the Orion Distribution Center case study, and what heights were accessed?",
+      "groundTruthAnswer": "In the Orion Distribution Center case study, using the industrial model (LV-3) for accessing high-bay racking systems up to 20 meters high for stock audit and maintenance tasks reduced the time required by a measured 78% compared to conventional equipment deployment. This 78% figure is also echoed in a separate warehouse benchmark test comparing forklift retrieval at 12 meters to LV-C retrieval, though that is a distinct study from the Orion case study.",
+      "generatedAnswer": "In the Orion Distribution Center case study, the use of LevBoots for accessing high-bay racking systems reduced the time required by a measured 78% compared to conventional equipment deployment. The heights accessed in this study were up to 20 meters.",
+      "evaluationScore": 9,
+      "justificationForScore": "The generated answer is mostly correct but slightly differs from the ground truth by not mentioning that the 78% reduction was specifically for high-bay racking systems up to 20 meters and that this figure comes from a separate warehouse benchmark test."
+    }
+  ],
+  "quality": 77
+}

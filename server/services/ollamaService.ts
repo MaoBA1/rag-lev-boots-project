@@ -2,6 +2,7 @@ const OLLAMA_BASE_URL = process.env.OLLAMA_BASE_URL || 'http://localhost:11434';
 
 export const EMBEDDING_MODEL = 'nomic-embed-text';
 export const GENERATION_MODEL = 'llama3.2';
+export const JUDGE_MODEL = 'qwen2.5:7b';
 
 export const embedText = async (text: string): Promise<number[]> => {
   const res = await fetch(`${OLLAMA_BASE_URL}/api/embeddings`, {
@@ -23,11 +24,28 @@ export interface ChatMessage {
   content: string;
 }
 
-export const generateAnswer = async (messages: ChatMessage[]): Promise<string> => {
+export interface GenerateOptions {
+  model?: string;
+  json?: boolean;
+  temperature?: number;
+}
+
+export const generateAnswer = async (
+  messages: ChatMessage[],
+  options: GenerateOptions = {}
+): Promise<string> => {
+  const { model = GENERATION_MODEL, json = false, temperature = 0 } = options;
+
   const res = await fetch(`${OLLAMA_BASE_URL}/api/chat`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: GENERATION_MODEL, messages, stream: false }),
+    body: JSON.stringify({
+      model,
+      messages,
+      stream: false,
+      options: { temperature },
+      ...(json ? { format: 'json' } : {}),
+    }),
   });
 
   if (!res.ok) {
