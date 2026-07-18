@@ -25,3 +25,9 @@ dist-ssr
 
 .env
 .claude
+
+# RAGAS ground-truth prep dumps (throwaway)
+server/articles_dump
+server/slack_dump
+server/slack_dump_combined.txt
+server/pdf_text_dump
