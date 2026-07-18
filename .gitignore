@@ -31,3 +31,13 @@ server/articles_dump
 server/slack_dump
 server/slack_dump_combined.txt
 server/pdf_text_dump
+
+# Python (ragas-option-2)
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+server/ragas/rag_eval/evals/datasets/
+server/ragas/rag_eval/evals/experiments/
+server/ragas/rag_eval/evals/logs/
+server/ragas/rag_eval/evals/results.json

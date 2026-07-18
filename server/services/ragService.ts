@@ -70,12 +70,17 @@ Context:
 ${context}`;
 };
 
-export const ask = async (userQuestion: string): Promise<string> => {
+export interface AskResult {
+  answer: string;
+  retrievedChunks: RetrievedChunk[];
+}
+
+export const askWithContext = async (userQuestion: string): Promise<AskResult> => {
   const questionEmbedding = await embedText(userQuestion);
   const chunks = await retrieveRelevantChunks(questionEmbedding);
 
   if (chunks.length === 0) {
-    return NO_DATA_MESSAGE;
+    return { answer: NO_DATA_MESSAGE, retrievedChunks: [] };
   }
 
   const messages: ChatMessage[] = [
@@ -83,5 +88,11 @@ export const ask = async (userQuestion: string): Promise<string> => {
     { role: 'user', content: userQuestion },
   ];
 
-  return generateAnswer(messages);
+  const answer = await generateAnswer(messages);
+  return { answer, retrievedChunks: chunks };
+};
+
+export const ask = async (userQuestion: string): Promise<string> => {
+  const { answer } = await askWithContext(userQuestion);
+  return answer;
 };
