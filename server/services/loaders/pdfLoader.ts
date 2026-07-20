@@ -29,3 +29,10 @@ export const loadPdfs = async (): Promise<LoadedDoc[]> => {
 
   return docs;
 };
+
+export const loadPdfByFilename = async (filename: string): Promise<string> => {
+  const buffer = await readFile(path.join(PDF_DIR, `${filename}.pdf`));
+  const { text } = await pdfParse(buffer);
+
+  return text;
+};

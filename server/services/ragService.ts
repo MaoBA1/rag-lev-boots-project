@@ -1,11 +1,12 @@
 // Make sure you've reviewd the README.md file to understand the task and the RAG flow
 
 import sequelize from '../config/database';
-import { loadPdfs } from './loaders/pdfLoader';
-import { loadArticles } from './loaders/articleLoader';
+import { loadPdfs, loadPdfByFilename } from './loaders/pdfLoader';
+import { loadArticles, loadArticleById, ARTICLE_IDS } from './loaders/articleLoader';
 import { loadSlackMessages } from './loaders/slackLoader';
 import { storeAllDocs } from './knowledgeBaseStore';
 import { embedText, generateAnswer, ChatMessage } from './ollamaService';
+import { DATA_SOURCES } from '../config/constants';
 
 const TOP_K = 5;
 const DISTANCE_THRESHOLD = 0.46;
@@ -26,6 +27,53 @@ export const loadAllData = async () => {
   ]);
 
   await storeAllDocs([...pdfDocs, ...articleDocs, ...slackDocs]);
+};
+
+interface KnowledgeSourceEntry {
+  type: string;
+  name: string;
+}
+
+export const listKnowledgeSources = async (): Promise<
+  Record<string, KnowledgeSourceEntry[]>
+> => {
+  const result: Record<string, KnowledgeSourceEntry[]> = {};
+  const sources = Object.values(DATA_SOURCES).filter(
+    (source) => source !== DATA_SOURCES.SLACK
+  );
+
+  for (const source of sources) {
+    const [rows] = await sequelize.query(
+      `SELECT DISTINCT source_id FROM knowledge_base WHERE source = :source ORDER BY source_id`,
+      { replacements: { source } }
+    );
+
+    result[source] = (rows as { source_id: string }[]).map((row) => ({
+      type: source,
+      name: row.source_id,
+    }));
+  }
+
+  return result;
+};
+
+export const readSource = async (
+  sourceName: string,
+  sourceType?: 'pdf' | 'article'
+): Promise<string> => {
+  if (sourceType === 'pdf') {
+    return loadPdfByFilename(sourceName);
+  }
+  if (sourceType === 'article') {
+    return loadArticleById(sourceName);
+  }
+
+  // Auto-detect: articles come from a small, fixed, known id list (cheap
+  // in-memory check); anything else is assumed to be a PDF filename.
+  if (ARTICLE_IDS.includes(sourceName)) {
+    return loadArticleById(sourceName);
+  }
+  return loadPdfByFilename(sourceName);
 };
 
 const retrieveRelevantChunks = async (
