@@ -24,8 +24,8 @@ const buildGatekeeperPrompt = (units: string[]): string => {
 Use the surrounding messages as context - a short or otherwise ambiguous message is significant if it depends on or reinforces a specific claim made nearby, but not significant if it carries no informational content of its own even in context.
 
 Rules:
-- NOT significant: greetings, social acknowledgments, pure status-check questions with no information of their own, or off-topic chatter unrelated to Lev-Boots.
-- Significant: any message stating a concrete fact, number, decision, or finding about Lev-Boots technology, engineering, or safety - even if brief.
+- NOT significant: greetings, social acknowledgments that add no information beyond agreement or reaction (e.g. "nice!", "thanks", "good luck"), pure status-check questions with no information of their own, or off-topic chatter unrelated to Lev-Boots.
+- Significant: any message stating a concrete fact, number, decision, finding, or reasoning about Lev-Boots technology, engineering, or safety - even if brief, and even if it opens with a casual or enthusiastic reaction. Judge based on whether informational content is present anywhere in the message, not on its opening tone.
 - Judge every message independently, but let the surrounding messages inform your judgment of each one.
 
 Respond with ONLY a JSON object in this exact shape, no other text, with one

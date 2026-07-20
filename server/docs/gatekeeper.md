@@ -358,12 +358,75 @@ since the Gatekeeper never touches them.
 
 ---
 
-## Part 9 — Known limitations / not yet done
+## Part 9 — Attempting to fix the tone bias: two iterations, still unresolved
 
-- **The prompt weights tone over content in some borderline cases** (Part 8.2) —
-  not fixed, since the underlying facts in the affected messages are generally
-  redundant with content stated elsewhere in the corpus, but a real limitation of
-  the current rubric worth revisiting if precision here matters more later.
+Two follow-up attempts were made to fix the tone-over-content bias from Part 8.2.
+Both were tested the same way: clear `knowledge_base`, delete the old rejections
+log, rerun `loadAllData` end to end, compare against the two known target cases
+(`m0070`'s "5.1 minutes... 13% gain... Impressive." and `m0005`'s "40C" reading)
+and against the overall row count / fully-filtered-thread count as a regression
+check.
+
+### 9.1 Attempt 1 — an explicit rule plus a concrete worked example
+
+Added a new rule stating that casual tone doesn't disqualify a message, plus one
+worked example built directly from the `m0070` failure case.
+
+**Result: mixed, not a clean win.** The exact target case got fixed — `m0070`'s
+message was no longer rejected. But it didn't generalize: `m0005`'s nearly
+identical case (a real figure, casual wrapping) was still rejected. Worse, three
+*additional* threads that had never been fully filtered before (`m0011`, `m0035`,
+`m0113`) became fully filtered this run — Slack row count dropped from 40 to 37.
+Inspecting what got swept up: `m0035` included *"The Hover Polo players are
+masters of the 35 degree tilt. Shame about the injury rates, though"* (referencing
+the real 35° safety threshold), and `m0113` included *"You need to feel that
+physiological strain to design safer boots!"* (a real design rationale) — both
+plausibly informative, both newly rejected.
+
+**Working theory for why**: the worked example was narrowly numeric (5.1 minutes,
+13% gain). Giving the model one example anchored specifically on "a number in
+casual wrapping" may have implicitly narrowed its definition of "significant"
+toward *requires a number*, making it more willing to reject the kind of
+qualitative reasoning/rationale content that the original criteria (fact,
+number, decision, *or finding*) always intended to include. One example
+over-anchored behavior in an unintended direction rather than generalizing.
+
+### 9.2 Attempt 2 — broaden the wording, drop the worked example
+
+Removed the standalone example entirely. Instead, wove the "tone doesn't override
+content" guidance directly into the existing NOT-significant/Significant rules,
+and broadened "significant" to explicitly include *reasoning*, not just
+fact/number/decision/finding — targeting the exact category (`m0113`'s rationale
+message) that Attempt 1 had newly broken.
+
+**Result: reverted to baseline, in both directions.** The regression from Attempt
+1 was gone — back to exactly 40 Slack rows, only `m0045` fully filtered, matching
+the original pre-tuning behavior. But the original target problem came back too:
+both `m0070` and `m0005`'s cases were rejected again, identical to the very first
+run before any prompt changes were made. Net effect: behaviorally indistinguishable
+from the untouched original prompt — no worse, but also no better.
+
+### 9.3 Where this stands
+
+Two real, informative attempts, neither successful in isolation: a concrete
+example changes behavior but overfits to its own specific shape; general wording
+is safe but too weak to move the model's judgment at all. This suggests the fix
+needs either multiple varied examples (to generalize without overfitting to one
+case's surface features) or a different mechanism entirely, not another single
+wording tweak in the same direction as these two. **Deliberately paused here** —
+the current prompt (Attempt 2's wording) is what's live at the end of this
+session, with the tone bias from Part 8.2 present and unresolved, to be picked up
+and iterated on further later.
+
+---
+
+## Part 10 — Known limitations / not yet done
+
+- **The prompt weights tone over content in some borderline cases** (Part 8.2), and
+  two attempts to fix it were inconclusive (Part 9) — genuinely open, not just
+  deprioritized. The underlying facts in the affected messages are generally
+  redundant with content stated elsewhere in the corpus, which limits real-world
+  impact, but this is unfinished work, not an accepted tradeoff.
 - **The "extremely small post-filter chunk" edge case is accepted, not handled.**
   If a thread is mostly noise and only one short message survives filtering, the
   resulting chunk could be genuinely tiny — closer to the actual near-empty-chunk
