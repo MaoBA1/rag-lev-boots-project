@@ -1,0 +1,476 @@
+[
+  {
+    "timestamp": "2026-07-19T22:10:24.199Z",
+    "source": "slack",
+    "source_id": "m0005",
+    "unit": "Sinai (scientist): Primary battery temp stabilizing at 40C during short 4.5m bursts. Acceptable for prototype testing."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:24.200Z",
+    "source": "slack",
+    "source_id": "m0005",
+    "unit": "Alvarez (safety): Do those short bursts generate enough heat to stress the thermal coatings? Just following up on that supplier report."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:32.104Z",
+    "source": "slack",
+    "source_id": "m0013",
+    "unit": "Alvarez (safety): Did the Kugel tests have a stable TRAS link? Need to make sure historical failure data includes TRAS engagement metrics."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:32.104Z",
+    "source": "slack",
+    "source_id": "m0013",
+    "unit": "Alvarez (safety): Documenting all TRAS engagement logs from the initial military rollout for liability review."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:38.351Z",
+    "source": "slack",
+    "source_id": "m0018",
+    "unit": "Sinai (scientist): Suspect the MTVS induction is interfering with the core AFG magnetics. Looking at new shielding options."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:38.351Z",
+    "source": "slack",
+    "source_id": "m0018",
+    "unit": "Fast (engineer): Copy that, Mira. We'll hold off on pushing max thrust until shielding is applied. Didn't realize the crosstalk was so high."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:38.351Z",
+    "source": "slack",
+    "source_id": "m0018",
+    "unit": "Fast (engineer): Finalizing the magnetic shielding installation on the prototype. Ready for the MTVS stress test tomorrow."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:38.351Z",
+    "source": "slack",
+    "source_id": "m0018",
+    "unit": "Fast (engineer): Fantastic news! That means we can proceed with stress-testing the MTVS at max 30,000 RPM tomorrow."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:38.351Z",
+    "source": "slack",
+    "source_id": "m0018",
+    "unit": "Alvarez (safety): Remember to log the MTVS noise signature at max thrust. Noise complaints are already a predicted future controversy."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:43.691Z",
+    "source": "slack",
+    "source_id": "m0032",
+    "unit": "Sinai (scientist): Starting balance adaptation trials today with new volunteers. Focusing on data collection for vestibular fatigue rates."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:43.691Z",
+    "source": "slack",
+    "source_id": "m0032",
+    "unit": "Alvarez (safety): Excellent. Make sure they all complete the full 12-hour balance training first. We need clean data, not training mishaps."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:47.950Z",
+    "source": "slack",
+    "source_id": "m0039",
+    "unit": "Fast (engineer): Is the hum causing control issues, Mira? We had an old failure (Cryo-Coil) that resulted in field ripple, but not a full hum."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:47.950Z",
+    "source": "slack",
+    "source_id": "m0039",
+    "unit": "Sinai (scientist): No control loss, but it's physically uncomfortable for the wearer. A physiological strain issue, not a hard safety failure."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:52.103Z",
+    "source": "slack",
+    "source_id": "m0052",
+    "unit": "Sinai (scientist): Focusing on refining the IDS logic to reduce vestibular strain. The inner ear adaptation is brutal for new users."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:52.103Z",
+    "source": "slack",
+    "source_id": "m0052",
+    "unit": "Sinai (scientist): I'm looking into using a pre-emptive AI to predict COG shifts, reducing the instantaneous manual load on the user."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:56.253Z",
+    "source": "slack",
+    "source_id": "m0061",
+    "unit": "Sinai (scientist): Need to look into long-term AFG maintenance procedures. The dysprosium alloy core has to be perfectly maintained."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:56.253Z",
+    "source": "slack",
+    "source_id": "m0061",
+    "unit": "Alvarez (safety): It validates the hard 30m civilian cap, Mira. The thin air and physiological stress are too dangerous without advanced suits."
+  },
+  {
+    "timestamp": "2026-07-19T22:10:56.253Z",
+    "source": "slack",
+    "source_id": "m0061",
+    "unit": "Alvarez (safety): We need to publicize the military's use of the LV-1 for vertical infiltration. It provides a good counterpoint to the civilian complaints."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:02.655Z",
+    "source": "slack",
+    "source_id": "m0070",
+    "unit": "Sinai (scientist): Next week we shift focus to the LV-C power modulation for high load capacity."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:02.655Z",
+    "source": "slack",
+    "source_id": "m0070",
+    "unit": "Sinai (scientist): Next focus: optimizing the AFG power draw during horizontal boost (MTVS activation). Efficiency is key to democratizing this tech."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:02.655Z",
+    "source": "slack",
+    "source_id": "m0070",
+    "unit": "Fast (engineer): Good luck. If you can push the LV-1's 4.5 minute life to 6 minutes, that's a huge win before the battery upgrade."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:02.655Z",
+    "source": "slack",
+    "source_id": "m0070",
+    "unit": "Fast (engineer): Nice! 5.1 minutes is a 13% gain over the original 4.5m mark, just through software. Impressive."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:06.823Z",
+    "source": "slack",
+    "source_id": "m0075",
+    "unit": "Alvarez (safety): That's how we solve the industrial musculoskeletal sprain problem! Less fatigue, fewer TRAS activations. Great work, Mira."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:06.823Z",
+    "source": "slack",
+    "source_id": "m0075",
+    "unit": "Fast (engineer): Can that AI model be easily deployed via firmware update to existing LV-4 units? Or does it need new hardware?"
+  },
+  {
+    "timestamp": "2026-07-19T22:11:11.726Z",
+    "source": "slack",
+    "source_id": "m0084",
+    "unit": "Sinai (scientist): Reviewing the physics community's skepticism. Our LGR theory still faces controversy regarding long-term gravitational effects."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:11.726Z",
+    "source": "slack",
+    "source_id": "m0084",
+    "unit": "Sinai (scientist): Working on instrumentation for the vacuum field signature test. Hoping to get a clearer reading on gravitational effects."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:16.091Z",
+    "source": "slack",
+    "source_id": "m0100",
+    "unit": "Alvarez (safety): That's critical for Grounder Liability compliance. The training works, but the AI assist is still needed to mitigate vestibular fatigue."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:19.682Z",
+    "source": "slack",
+    "source_id": "m0109",
+    "unit": "Alvarez (safety): Excellent metrics, Mira. That means the balance assist is highly responsive, reducing the chance of hitting the 35 degree tilt threshold."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:19.682Z",
+    "source": "slack",
+    "source_id": "m0109",
+    "unit": "Sinai (scientist): Next project: refining the AI assist to meet the VMSB's goal of eliminating the need for annual balance tests."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:25.740Z",
+    "source": "slack",
+    "source_id": "m0021",
+    "unit": "Alvarez (safety): Remind me to check the civilian license agreement for the 30m Aetheric Cap requirement. Must be explicit."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:25.740Z",
+    "source": "slack",
+    "source_id": "m0021",
+    "unit": "Fast (engineer): The military incident highlights that even if the power fails (never publicly reported), the backup must ensure TRAS functions. Our logic handles dual failure."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:27.963Z",
+    "source": "slack",
+    "source_id": "m0007",
+    "unit": "Alvarez (safety): Taylor, that noise will cause regulatory headaches. We need to focus on a quiet booster model for civilian areas."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:35.472Z",
+    "source": "slack",
+    "source_id": "m0029",
+    "unit": "Alvarez (safety): Need to draft mitigation strategy for the noise. That 30,000 RPM whine will not go over well in dense city centers, especially for 'Lev Commuters.'"
+  },
+  {
+    "timestamp": "2026-07-19T22:11:44.260Z",
+    "source": "slack",
+    "source_id": "m0042",
+    "unit": "Fast (engineer): Drafting the revised TRAS logic to incorporate the new 30m altitude cut-off. Will be ready for review Monday."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:52.411Z",
+    "source": "slack",
+    "source_id": "m0058",
+    "unit": "Fast (engineer): LV-C battery performance is exactly where we need it for 8-hour industrial shifts. Massive improvement from the LV-1's 4.5m limit."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:52.411Z",
+    "source": "slack",
+    "source_id": "m0058",
+    "unit": "Alvarez (safety): That's great, Taylor. Industrial use is critical. Now the compliance team can push the 12-hour training mandate for warehouse operators."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:52.411Z",
+    "source": "slack",
+    "source_id": "m0058",
+    "unit": "Alvarez (safety): The 8-hour battery life is key to getting the industrial sector on board. It makes the 12-hour training worth the investment."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:57.482Z",
+    "source": "slack",
+    "source_id": "m0064",
+    "unit": "Fast (engineer): Started integrating the sound-dampening composite into the MTVS housing for the LV-4 (commuter) model. It's a bulky fix."
+  },
+  {
+    "timestamp": "2026-07-19T22:11:57.482Z",
+    "source": "slack",
+    "source_id": "m0064",
+    "unit": "Alvarez (safety): Bulky is better than city council mandates, Taylor. The noise generated by those 30,000 RPM rotors is a liability."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:01.361Z",
+    "source": "slack",
+    "source_id": "m0072",
+    "unit": "Fast (engineer): I agree. We should emphasize the flawless $0.5 \\text{ m/s}$ descent and the triple-redundant biometric check."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:05.742Z",
+    "source": "slack",
+    "source_id": "m0081",
+    "unit": "Fast (engineer): Field testing the LV-C industrial model at the Global Logistics warehouse. Focusing on pick cycle velocity metrics today."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:05.742Z",
+    "source": "slack",
+    "source_id": "m0081",
+    "unit": "Alvarez (safety): Excellent! That 78% average reduction is the number we need to sell the mandatory 12-hour training to the warehouse management."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:05.742Z",
+    "source": "slack",
+    "source_id": "m0081",
+    "unit": "Fast (engineer): Running final simulations on the LV-C's ability to handle high payloads."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:10.314Z",
+    "source": "slack",
+    "source_id": "m0087",
+    "unit": "Alvarez (safety): Ensure full material traceability, Taylor. The MTVS overheating recall was traced back to a sub-supplier substitution. We need the 'Aerospace Standard' here."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:10.314Z",
+    "source": "slack",
+    "source_id": "m0087",
+    "unit": "Fast (engineer): Agreed. Every gram is logged. We are not repeating the recall mess. Projected unit cost increase is 20%, but it's essential for safety."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:13.380Z",
+    "source": "slack",
+    "source_id": "m0097",
+    "unit": "Alvarez (safety): Are you simulating collisions? We need to ensure the carbon-nanotube shell integrity is maintained when hitting other users in dense air traffic."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:17.960Z",
+    "source": "slack",
+    "source_id": "m0106",
+    "unit": "Fast (engineer): Running a final check on the triply-redundant safety sensor suite before signing off on the production run."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:17.960Z",
+    "source": "slack",
+    "source_id": "m0106",
+    "unit": "Alvarez (safety): How does the AFG reduction interact with the TRAS $0.5 \\text{ m/s}$ failsafe? We need to ensure the TRAS always overrides."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:21.911Z",
+    "source": "slack",
+    "source_id": "m0111",
+    "unit": "Alvarez (safety): Good work, Taylor. Time to start working on regulating the new LevBall leagues."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:21.911Z",
+    "source": "slack",
+    "source_id": "m0111",
+    "unit": "Fast (engineer): Shutting down the lab for the day. Great work this past two weeks!"
+  },
+  {
+    "timestamp": "2026-07-19T22:12:26.029Z",
+    "source": "slack",
+    "source_id": "m0001",
+    "unit": "Fast (engineer): Morning team. Anyone else still feeling the burn from that 12-hour balance training last week? My core is crying."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:26.029Z",
+    "source": "slack",
+    "source_id": "m0001",
+    "unit": "Alvarez (safety): Morning! That training is non-negotiable, Taylor! It's the only thing keeping untrained staff off the auto-land reports. Take some ibuprofen."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:26.029Z",
+    "source": "slack",
+    "source_id": "m0001",
+    "unit": "Sinai (scientist): Agreed with Raul. The $35^circ$ tilt threshold is a hard boundary, not a suggestion. But yes, I'm sore too. Coffee is mandatory this morning."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:29.791Z",
+    "source": "slack",
+    "source_id": "m0011",
+    "unit": "Alvarez (safety): Lunch break! Who wants to try that new Thai place? I'm craving something that requires zero balance."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:29.791Z",
+    "source": "slack",
+    "source_id": "m0011",
+    "unit": "Fast (engineer): I'm in, just need to finish torquing these manifold bolts. Will be there in 10."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:29.791Z",
+    "source": "slack",
+    "source_id": "m0011",
+    "unit": "Fast (engineer): Did anyone else notice that huge crane on the other side of the campus? Looks like they're building a new warehouse."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:32.349Z",
+    "source": "slack",
+    "source_id": "m0024",
+    "unit": "Sinai (scientist): I am so tired of soldering micro-fluidic cooling tubes. My hands are shaking. Definitely skipping the gym today."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:36.539Z",
+    "source": "slack",
+    "source_id": "m0035",
+    "unit": "Alvarez (safety): Anyone see that meme of the Hover Polo players? Funny stuff. Didn't think our tech would spawn an extreme sport so fast."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:36.539Z",
+    "source": "slack",
+    "source_id": "m0035",
+    "unit": "Sinai (scientist): The Hover Polo commentary is hilarious. They call the TRAS descent the 'Slow Drop of Shame.'"
+  },
+  {
+    "timestamp": "2026-07-19T22:12:41.425Z",
+    "source": "slack",
+    "source_id": "m0045",
+    "unit": "Alvarez (safety): Almost weekend! Thank goodness. Need a mental break from TRAS regulations."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:41.425Z",
+    "source": "slack",
+    "source_id": "m0045",
+    "unit": "Alvarez (safety): Half-day today! I need to catch up on the regulatory paperwork for the Aetheric Cap."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:41.425Z",
+    "source": "slack",
+    "source_id": "m0045",
+    "unit": "Sinai (scientist): Enjoy your afternoon, Raul. I'm taking a break from the AFG noise."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:41.425Z",
+    "source": "slack",
+    "source_id": "m0045",
+    "unit": "Fast (engineer): See you all Monday. Time to try out my new custom boot skins. Gotta look good for the future Lev Commuter subculture."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:41.425Z",
+    "source": "slack",
+    "source_id": "m0045",
+    "unit": "Fast (engineer): I heard the custom boot skins market is already worth $20 million. Wild."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:45.876Z",
+    "source": "slack",
+    "source_id": "m0055",
+    "unit": "Fast (engineer): Lunch. I am eating this enormous burrito to rebuild the core strength I lost during my morning test flight."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:45.876Z",
+    "source": "slack",
+    "source_id": "m0055",
+    "unit": "Alvarez (safety): Haha. Don't forget, tomorrow is the full internal review of the military over-ascent logs."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:45.876Z",
+    "source": "slack",
+    "source_id": "m0055",
+    "unit": "Alvarez (safety): I still think we should have mandated helmets for all commuters. The collision risk is too high."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:49.679Z",
+    "source": "slack",
+    "source_id": "m0067",
+    "unit": "Sinai (scientist): I need lunch. Any news on when the new LV-4 manufacturing line will start up? They need to stop sacrificing quality for cost."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:49.679Z",
+    "source": "slack",
+    "source_id": "m0067",
+    "unit": "Sinai (scientist): It's a tough call. Aesthetics versus safety. The Lev Commuter subculture values the freedom of movement."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:53.540Z",
+    "source": "slack",
+    "source_id": "m0079",
+    "unit": "Sinai (scientist): Quick question for Taylor in #engineering: Did you ever resolve the asymmetrical booster shut down in the MTVS test batch?"
+  },
+  {
+    "timestamp": "2026-07-19T22:12:58.258Z",
+    "source": "slack",
+    "source_id": "m0090",
+    "unit": "Alvarez (safety): TGIF! Taking the family to a Hover Polo exhibition tonight. Can't believe we engineered the gear for an extreme sport."
+  },
+  {
+    "timestamp": "2026-07-19T22:12:58.258Z",
+    "source": "slack",
+    "source_id": "m0090",
+    "unit": "Alvarez (safety): Have a great weekend, everyone! Time to relax."
+  },
+  {
+    "timestamp": "2026-07-19T22:13:03.264Z",
+    "source": "slack",
+    "source_id": "m0103",
+    "unit": "Fast (engineer): Pizza for lunch today. Need some carbs after running those impact simulations. My code feels like it took a hit."
+  },
+  {
+    "timestamp": "2026-07-19T22:13:03.264Z",
+    "source": "slack",
+    "source_id": "m0103",
+    "unit": "Alvarez (safety): Save me a slice. Did you see the latest article on the custom boot skins? They're getting wild."
+  },
+  {
+    "timestamp": "2026-07-19T22:13:03.264Z",
+    "source": "slack",
+    "source_id": "m0103",
+    "unit": "Sinai (scientist): It's funny, the boots started as defense tech, now they are a fashion statement. From recon to recreation."
+  },
+  {
+    "timestamp": "2026-07-19T22:13:08.847Z",
+    "source": "slack",
+    "source_id": "m0113",
+    "unit": "Sinai (scientist): Celebrating the successful LV-4 launch with a massive coffee. We deserve a break."
+  },
+  {
+    "timestamp": "2026-07-19T22:13:08.847Z",
+    "source": "slack",
+    "source_id": "m0113",
+    "unit": "Fast (engineer): Definitely. Time to plan a vacation somewhere I can't levitate above 5m."
+  },
+  {
+    "timestamp": "2026-07-19T22:13:08.847Z",
+    "source": "slack",
+    "source_id": "m0113",
+    "unit": "Sinai (scientist): No chance, Raul. You need to feel that physiological strain to design safer boots!"
+  },
+  {
+    "timestamp": "2026-07-19T22:13:08.847Z",
+    "source": "slack",
+    "source_id": "m0113",
+    "unit": "Alvarez (safety): Cheers to that! What a sprint."
+  }
+]

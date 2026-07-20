@@ -4,7 +4,9 @@ import { splitIntoParagraphs } from './chunking/splitIntoParagraphs';
 import { splitIntoSentences } from './chunking/splitIntoSentences';
 import { splitIntoMessages } from './chunking/splitIntoMessages';
 import { packIntoChunks } from './chunking/packIntoChunks';
+import { packIntoReversibleChunks } from './chunking/packIntoReversibleChunks';
 import { embedText } from './ollamaService';
+import { filterSignificantUnits } from './gatekeeper';
 
 const splitters: Record<LoadedDoc['source'], (text: string) => string[]> = {
   pdf: splitIntoSentences,
@@ -48,23 +50,53 @@ const insertChunk = async (
   );
 };
 
+// Builds the final chunk_content per chunk index. Slack goes through the
+// reversible packer + Gatekeeper (a chunk entry is null if every unit in it
+// got filtered out); PDF/article use the original packer directly and skip
+// the Gatekeeper entirely - see gatekeeper.md for why the two sources are
+// treated differently.
+const buildChunkContents = async (doc: LoadedDoc, units: string[]): Promise<(string | null)[]> => {
+  if (doc.source !== 'slack') {
+    return packIntoChunks(units);
+  }
+
+  const chunkUnitGroups = packIntoReversibleChunks(units);
+  const contents: (string | null)[] = [];
+
+  for (const unitGroup of chunkUnitGroups) {
+    const survivingUnits = await filterSignificantUnits(unitGroup, doc.source, doc.source_id);
+    contents.push(survivingUnits.length > 0 ? survivingUnits.join(' ') : null);
+  }
+
+  return contents;
+};
+
 export const storeDoc = async (doc: LoadedDoc): Promise<void> => {
   const split = splitters[doc.source];
   const units = split(doc.text);
-  const chunks = packIntoChunks(units);
+  const chunkContents = await buildChunkContents(doc, units);
   const existing = await getExistingChunkIndices(doc.source, doc.source_id);
 
   let stored = 0;
-  for (let i = 0; i < chunks.length; i++) {
+  let filteredOut = 0;
+
+  for (let i = 0; i < chunkContents.length; i++) {
     if (existing.has(i)) continue;
 
-    const embedding = await embedText(chunks[i]);
-    await insertChunk(doc.source, doc.source_id, i, chunks[i], embedding);
+    const content = chunkContents[i];
+    if (content === null) {
+      filteredOut++;
+      continue;
+    }
+
+    const embedding = await embedText(content);
+    await insertChunk(doc.source, doc.source_id, i, content, embedding);
     stored++;
   }
 
+  const alreadyExisted = chunkContents.length - stored - filteredOut;
   console.log(
-    `[${doc.source}:${doc.source_id}] ${chunks.length} chunk(s), ${stored} newly stored, ${chunks.length - stored} already existed`
+    `[${doc.source}:${doc.source_id}] ${chunkContents.length} chunk(s), ${stored} newly stored, ${alreadyExisted} already existed, ${filteredOut} fully filtered by gatekeeper`
   );
 };
 
