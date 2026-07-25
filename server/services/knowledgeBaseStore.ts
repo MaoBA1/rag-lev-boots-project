@@ -4,7 +4,7 @@ import { splitIntoParagraphs } from './chunking/splitIntoParagraphs';
 import { splitIntoSentences } from './chunking/splitIntoSentences';
 import { splitIntoMessages } from './chunking/splitIntoMessages';
 import { packIntoChunks } from './chunking/packIntoChunks';
-import { embedText } from './ollamaService';
+import { embedText } from './llmService';
 
 const splitters: Record<LoadedDoc['source'], (text: string) => string[]> = {
   pdf: splitIntoSentences,

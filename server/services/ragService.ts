@@ -5,7 +5,7 @@ import { loadPdfs, loadPdfByFilename } from './loaders/pdfLoader';
 import { loadArticles, loadArticleById, ARTICLE_IDS } from './loaders/articleLoader';
 import { loadSlackMessages } from './loaders/slackLoader';
 import { storeAllDocs } from './knowledgeBaseStore';
-import { embedText, generateAnswer, ChatMessage } from './ollamaService';
+import { embedText, generateAnswer, ChatMessage } from './llmService';
 import { DATA_SOURCES } from '../config/constants';
 
 const TOP_K = 5;
