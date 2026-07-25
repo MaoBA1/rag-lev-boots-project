@@ -5,7 +5,7 @@ import { splitIntoSentences } from './chunking/splitIntoSentences';
 import { splitIntoMessages } from './chunking/splitIntoMessages';
 import { packIntoChunks } from './chunking/packIntoChunks';
 import { packIntoReversibleChunks } from './chunking/packIntoReversibleChunks';
-import { embedText } from './ollamaService';
+import { embedText } from './llmService';
 import { filterSignificantUnits } from './gatekeeper';
 
 const splitters: Record<LoadedDoc['source'], (text: string) => string[]> = {

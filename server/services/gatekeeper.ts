@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { ChatMessage, generateAnswer, JUDGE_MODEL } from './ollamaService';
+import { ChatMessage, generateAnswer, JUDGE_MODEL } from './llmService';
 
 const REJECTIONS_LOG_PATH = path.resolve(process.cwd(), 'gatekeeper_rejections.json');
 
