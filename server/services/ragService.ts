@@ -5,7 +5,7 @@ import { loadPdfs } from './loaders/pdfLoader';
 import { loadArticles } from './loaders/articleLoader';
 import { loadSlackMessages } from './loaders/slackLoader';
 import { storeAllDocs } from './knowledgeBaseStore';
-import { embedText, generateAnswer, ChatMessage } from './ollamaService';
+import { embedText, generateAnswer, ChatMessage } from './llmService';
 
 const TOP_K = 5;
 const DISTANCE_THRESHOLD = 0.46;
