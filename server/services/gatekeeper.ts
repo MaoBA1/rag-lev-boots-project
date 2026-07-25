@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { ChatMessage, generateAnswer, JUDGE_MODEL } from './llmService';
+import { ChatMessage, generateAnswer, JUDGE_MODEL, OLLAMA_BASE_URL } from './llmService';
 
 const REJECTIONS_LOG_PATH = path.resolve(process.cwd(), 'gatekeeper_rejections.json');
 
@@ -74,7 +74,11 @@ export const filterSignificantUnits = async (
     { role: 'user', content: 'Classify each message now.' },
   ];
 
-  const raw = await generateAnswer(messages, { model: JUDGE_MODEL, json: true });
+  const raw = await generateAnswer(messages, {
+    model: JUDGE_MODEL,
+    json: true,
+    baseUrl: OLLAMA_BASE_URL,
+  });
   const { verdicts } = JSON.parse(raw) as { verdicts: UnitVerdict[] };
   const significantIndices = new Set(
     verdicts.filter((v) => v.significant).map((v) => v.index)
