@@ -1,4 +1,4 @@
-import { generateAnswer, ChatMessage, JUDGE_MODEL } from '../services/ollamaService';
+import { generateAnswer, ChatMessage, JUDGE_MODEL } from '../services/llmService';
 
 export interface JudgeResult {
   score: number;
